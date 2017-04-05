@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+Manmeet Dhaliwal
+471 Sample project to show connection to local database
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Coffee Shop</title>
+    </head>
+    <body>
+        <h1>PHP and MySQL testing page</h1>
+        <h2>Adding an Employee!</h2>
+        <form action="addEmployee.php" method="post">
+            SIN: <input type="number" name="sin" min="100000000" max="999999999">
+            New Password: <input type="password" name="newPassword">
+            Confirm New Password: <input type="password" name="confirmation">
+            Name: <input type="text" name="name" maxlength="255">
+            Manager SIN: <input type="number" name="managersin" min="100000000" max="999999999">
+            <input type="submit">        
+        </form>
+        <h2>Removing an Employee!</h2>
+        <form action="removeEmployee.php" method="post">
+            SIN: <input type="number" name="sin" min="100000000" max="999999999">
+            <input type="submit"> 
+        </form>
+        <h2>Logging in as a Customer!</h2>
+        <form action="CustomerLogin.php" method="post">
+            Email: <input type="text" name="email">
+            Password: <input type="password" name="password">
+            <input type="submit">
+        </form>
+        <h2>Logging in as an Employee!</h2>
+        <form action="EmployeeLogin.php" method="post">
+            SIN: <input type="number" name="sin" min="100000000" max="999999999">
+            Password: <input type="password" name="password">
+            <input type="submit">
+        </form>
+    </body>
+</html>

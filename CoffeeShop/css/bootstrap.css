@@ -4979,6 +4979,19 @@ a.badge:focus {
 	background-color: transparent;
 }
 
+#bannerc {
+	border: none;
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-image: url(../images/banner_c.jpg);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: contain;
+	background-color: transparent;
+}
+
 #title1, #title2{
 	font-variant: small-caps;
     font-family: "Bodoni BE";
@@ -5010,7 +5023,26 @@ a.badge:focus {
 	 box-sizing: border-box;
 	background-size: cover;
 	background-repeat: no-repeat;	
-5}
+}
+
+#purchaseh{
+	background-image:url(../images/banner_c1.jpg);
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;	
+}
+
+#rrewards {
+	background-image:url(../images/banner_c2.jpg);
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;	
+}
+
 .jumbotron {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -6812,28 +6844,8 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-#title {
-}
-#title {
-}
 #machinery {
 	width: inherit;
-}
-#ma {
-}
-#title1 {
-}
-#title3 {
-}
-#menu {
-}
-#title3 {
-}
-#title3 {
-}
-#title3 {
-}
-#title3 {
 }
 #title3 {
 }

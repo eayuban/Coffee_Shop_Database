@@ -1,4 +1,5 @@
 /*!
+ * Adobe Dreamweaver (Version CC) [Computer software]. (2016). San Jose, CA: Adobe Systems Incorporated.
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -4957,121 +4958,6 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
-#line{
-    height: 2px;
-    background-color:#B7C68B;
-    border-color: #B7C68B;
-    border-style: solid;
-    margin: auto;
-    width: 50%;
-}
-
-#bannerf {
-	border: none;
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-image: url(../images/banner.jpg);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: contain;
-	background-color: transparent;
-}
-
-#bannerc {
-	border: none;
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-image: url(../images/banner_c.jpg);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: contain;
-	background-color: transparent;
-}
-
-#banneremp {
-	border: none;
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-image: url(../images/banner_emp.jpg);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: contain;
-	background-color: transparent;
-}
-
-#title1, #title2{
-	font-variant: small-caps;
-    font-family: "Bodoni BE";
-    color: white;
-    text-align: center;
-    font-size: 70px;
-    font-weight: lighter;
-}
-
-.sub{
-	font-variant: small-caps;
-    font-family: "Bodoni BE";
-    color: white;
-}
-
-#recipe{
-	background-image: url(../images/recipe.jpg);
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-
-
-#inventory{
-	background-image:url(../images/reciepieban.jpg);
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-#machine{
-	background-image:url(../images/machinery.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-#menu{
-	background-image: url(../images/menu.jpg);
-	width: inherit;
-	height: inherit;
-	 box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;	
-}
-
-#purchaseh{
-	background-image:url(../images/banner_c1.jpg);
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;	
-}
-
-#rrewards {
-	background-image:url(../images/banner_c2.jpg);
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;	
-}
 
 .jumbotron {
   padding-top: 30px;
@@ -6874,6 +6760,119 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-#machinery {
+
+#line{
+    height: 2px;
+    background-color:#B7C68B;
+    border-color: #B7C68B;
+    border-style: solid;
+    margin: auto;
+    width: 50%;
+}
+
+#bannerf {
+	border: none;
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-image: url(../images/banner.jpg);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: contain;
+	background-color: transparent;
+}
+
+#bannerc {
+	border: none;
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-image: url(../images/banner_c.jpg);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: contain;
+	background-color: transparent;
+}
+
+#banneremp {
+	border: none;
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-image: url(../images/banner_emp.jpg);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: contain;
+	background-color: transparent;
+}
+
+#title1, #title2{
+	font-variant: small-caps;
+    font-family: "Bodoni BE";
+    color: white;
+    text-align: center;
+    font-size: 70px;
+    font-weight: lighter;
+}
+
+.sub{
+	font-variant: small-caps;
+    font-family: "Bodoni BE";
+    color: white;
+}
+
+#recipe{
+	background-image: url(../images/recipe.jpg);
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+#inventory{
+	background-image:url(../images/reciepieban.jpg);
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#machine{
+	background-image:url(../images/machinery.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#menu{
+	background-image: url(../images/menu.jpg);
 	width: inherit;
+	height: inherit;
+	 box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;	
+}
+
+#purchaseh{
+	background-image:url(../images/banner_c1.jpg);
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;	
+}
+
+#rrewards {
+	background-image:url(../images/banner_c2.jpg);
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;	
 }

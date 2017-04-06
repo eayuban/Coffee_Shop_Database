@@ -4992,6 +4992,19 @@ a.badge:focus {
 	background-color: transparent;
 }
 
+#banneremp {
+	border: none;
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-image: url(../images/banner_emp.jpg);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: contain;
+	background-color: transparent;
+}
+
 #title1, #title2{
 	font-variant: small-caps;
     font-family: "Bodoni BE";
@@ -5001,17 +5014,34 @@ a.badge:focus {
     font-weight: lighter;
 }
 
-#title3{
+.sub{
 	font-variant: small-caps;
     font-family: "Bodoni BE";
     color: white;
 }
 
-#machinery{
-	background-image:url(../images/machinery2.jpg);
+#recipe{
+	background-image: url(../images/recipe.jpg);
 	width: 100%;
 	height: inherit;
 	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+#inventory{
+	background-image:url(../images/reciepieban.jpg);
+	width: 100%;
+	height: inherit;
+	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#machine{
+	background-image:url(../images/machinery.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -6846,6 +6876,4 @@ button.close {
 /*# sourceMappingURL=bootstrap.css.map */
 #machinery {
 	width: inherit;
-}
-#title3 {
 }

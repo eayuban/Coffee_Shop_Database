@@ -1,5 +1,4 @@
 /*!
- * Adobe Dreamweaver (Version CC) [Computer software]. (2016). San Jose, CA: Adobe Systems Incorporated.
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -1184,10 +1183,10 @@ h6,
 .h4,
 .h5,
 .h6 {
-	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
-	font-weight: 500;
-	line-height: 1.1;
-	color: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
 }
 h1 small,
 h2 small,
@@ -1610,15 +1609,14 @@ pre code {
   margin-left: auto;
 }
 .row {
-	margin-right: 0px;
-	margin-left: -0px;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-	position: relative;
-	min-height: 1px;
-	padding-right: 15px;
-	border: none;
-	padding-left: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left;
@@ -2567,10 +2565,10 @@ output {
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
-	border-color: #66afe9;
-	outline: 0;
-	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102, 175, 233, .6);
-	box-shadow: 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102, 175, 233, .6);
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
 }
 .form-control::-moz-placeholder {
   color: #999;
@@ -4495,8 +4493,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-	background-color: #F4F0CB;
-	border-color: #e7e7e7;
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4541,8 +4539,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-	border-color: #685642;
-	background-color: #F4F0CB;
+  border-color: #e7e7e7;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -4958,7 +4955,6 @@ a.badge:focus {
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
-
 .jumbotron {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -4994,9 +4990,8 @@ a.badge:focus {
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
-	padding-right: 60px;
-	padding-left: 60px;
-	background-color: #F4F0CB;
+    padding-right: 60px;
+    padding-left: 60px;
   }
   .jumbotron h1,
   .jumbotron .h1 {
@@ -5822,14 +5817,14 @@ button.list-group-item-danger.active:focus {
   padding-bottom: 75%;
 }
 .well {
-	min-height: 20px;
-	padding: 19px;
-	margin-bottom: 20px;
-	background-color: #685642;
-	border: 1px solid #e3e3e3;
-	border-radius: 4px;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 .well blockquote {
   border-color: #ddd;
@@ -6760,119 +6755,3 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-
-#line{
-    height: 2px;
-    background-color:#B7C68B;
-    border-color: #B7C68B;
-    border-style: solid;
-    margin: auto;
-    width: 50%;
-}
-
-#bannerf {
-	border: none;
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-image: url(../images/banner.jpg);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: contain;
-	background-color: transparent;
-}
-
-#bannerc {
-	border: none;
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-image: url(../images/banner_c.jpg);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: contain;
-	background-color: transparent;
-}
-
-#banneremp {
-	border: none;
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-image: url(../images/banner_emp.jpg);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: contain;
-	background-color: transparent;
-}
-
-#title1, #title2{
-	font-variant: small-caps;
-    font-family: "Bodoni BE";
-    color: white;
-    text-align: center;
-    font-size: 70px;
-    font-weight: lighter;
-}
-
-.sub{
-	font-variant: small-caps;
-    font-family: "Bodoni BE";
-    color: white;
-}
-
-#recipe{
-	background-image: url(../images/recipe.jpg);
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-
-
-#inventory{
-	background-image:url(../images/reciepieban.jpg);
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-#machine{
-	background-image:url(../images/machinery.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-#menu{
-	background-image: url(../images/menu.jpg);
-	width: inherit;
-	height: inherit;
-	 box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;	
-}
-
-#purchaseh{
-	background-image:url(../images/banner_c1.jpg);
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;	
-}
-
-#rrewards {
-	background-image:url(../images/banner_c2.jpg);
-	width: 100%;
-	height: inherit;
-	box-sizing: border-box;
-	background-size: cover;
-	background-repeat: no-repeat;	
-}

@@ -75,26 +75,39 @@
     </div>
 <div>&nbsp;</div>
     <div class="row">
-      <div class="col-6 col-lg-6">
-        <blockquote>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <small>Someone famous in <cite title="Source Title">Source Title</cite></small> </blockquote>
-      </div>
-      <div class="col-6 col-lg-6">
-        <blockquote>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <small>Someone famous in <cite title="Source Title">Source Title</cite></small> </blockquote>
-      </div>
-      <div class="col-6 col-lg-6">
-        <blockquote>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <small>Someone famous in <cite title="Source Title">Source Title</cite></small> </blockquote>
-      </div>
-      <div class="col-6 col-lg-6">
-        <blockquote>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <small>Someone famous in <cite title="Source Title">Source Title</cite></small> </blockquote>
-      </div>
+        <?php
+        session_start();
+        $servername = "localhost";
+        $username = "root";
+        $password = "group15database";
+        $db = "coffee shop"; 
+        
+        $conn = new mysqli($servername, $username, $password, $db);
+        if ($conn->connect_error){
+            die("Connection failed".$conn->connect_error);
+        }
+        $sql = "SELECT
+                *
+                FROM
+                sales
+                WHERE
+                CustomerInfo = '$_SESSION[custEmail]'
+                ORDER BY
+                Date";            
+        $result = $conn->query($sql);
+        
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo "<div class='col-6 col-lg-6'>
+                        <blockquote>
+                          <p>$row[Drink]</p>
+                            <small>$row[Location] on $row[Date]</small> </blockquote>
+                     </div>";
+            
+            }
+        }
+        
+        ?>
     </div>
     <div>&nbsp;</div>
     
@@ -111,36 +124,29 @@
     <?php session_start() ?>
     <h3>POINTS ON YOUR ACCOUNT: <?php echo $_SESSION[points]; ?></h3>
     <div class="row">
-      <div class="col-xs-6 col-lg-4">
-        <h3>Feature Description</h3>
-        <p> <i class="icon-desktop "></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt impedit est voluptatem doloremque architecto corporis suscipit quidem ratione! Quis laborum nam optio dolorem doloremque ex nobis quibusdam ad quo dolores? </p>
-        <p><a class="btn btn-default" href="http://www.bootstraptor.com">View details »</a></p>
-      </div>
-      <div class="col-xs-6 col-lg-4">
-        <h3>Feature Description</h3>
-        <p> <i class="icon-desktop "></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, illo, libero esse assumenda culpa consequatur exercitationem beatae odio praesentium nihil iste ipsum reiciendis pariatur. Recusandae, reiciendis quidem eaque aut ab. </p>
-        <p><a class="btn btn-default" href="http://www.bootstraptor.com">View details »</a></p>
-      </div>
-      <div class="col-xs-6 col-lg-4">
-        <h3>Feature Description</h3>
-        <p> <i class="icon-desktop "></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, adipisci recusandae veniam laudantium distinctio temporibus eveniet dolorum earum iusto veritatis provident ducimus minima dolore quas vel omnis cumque voluptas quibusdam.</p>
-        <p><a class="btn btn-default" href="http://www.bootstraptor.com">View details »</a></p>
-      </div>
-      <div class="col-xs-6 col-lg-4">
-        <h3>Feature Description</h3>
-        <p> <em class="icon-desktop "></em> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, earum rem nostrum provident repellat inventore laborum deleniti quas facere Quasi impedit autem qui cupiditate modi vero vitae dolorum nisi explicabo ea dolores animi. Inventore, omnis.</p>
-        <p><a class="btn btn-default" href="http://www.bootstraptor.com">View details »</a></p>
-      </div>
-      <div class="col-xs-6 col-lg-4">
-        <h3>Feature Description</h3>
-        <p> <i class="icon-desktop "></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, iure, perspiciatis, ab ad quia animi esse repudiandae tempore quisquam dolorem sequi voluptatum qui fugiat. Quasi impedit autem qui cupiditate iusto?</p>
-        <p><a class="btn btn-default" href="http://www.bootstraptor.com">View details »</a></p>
-      </div>
-      <div class="col-xs-6 col-lg-4">
-        <h3>Feature Description</h3>
-        <p> <i class="icon-desktop "></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, aut, hic laudantium reprehenderit sapiente nemo consequatur corrupti accusantium! Hic, non rerum nihil reprehenderit excepturi explicabo error tempore aliquam eveniet odit.</p>
-        <p><a class="btn btn-default" href="http://www.bootstraptor.com">View details »</a></p>
-      </div>
+        
+        <?php 
+        session_start();
+        $sql = "SELECT
+                *
+                FROM
+                rewards
+                WHERE
+                PointCost <= $_SESSION[points]";
+        
+        $result = $conn->query($sql);
+        
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo "<div class='col-xs-6 col-lg-4'>
+                        <h3>$row[Type]</h3>
+                        <p> <i class='icon-desktop '></i>$row[PointCost] Points</p>
+                        <p><a class='btn btn-default' href='redeemReward.php'>Redeem! »</a></p>
+                      </div>";
+            
+            }
+        }
+        ?>
     </div>
   </div>
   <!-- / CONTAINER--> 

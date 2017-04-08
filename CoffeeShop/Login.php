@@ -36,8 +36,10 @@
             $row = $result->fetch_assoc();
             if(strcmp($row[Password], $password) == 0){
                 $redirect = true;
+                $_SESSION['empSIN'] = $row[SIN];
                 $_SESSION['empName'] = $row[Name];
                 $_SESSION['empLocation'] = $row[Location];
+                $_SESSION['manager'] = $row[ManagerSIN];
                 
             }
             else{

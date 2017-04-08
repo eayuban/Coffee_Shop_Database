@@ -76,6 +76,7 @@
             $row = $result->fetch_assoc();
             if(strcmp($row[Password], $password) == 0){
                 $redirect = true;
+                $_SESSION['custEmail'] = $row[Email];
                 $_SESSION['custName'] = $row[Name];
                 $_SESSION['points'] = $row[Points_Balance];
             }

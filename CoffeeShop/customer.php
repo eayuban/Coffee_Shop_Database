@@ -100,8 +100,8 @@
             while($row = $result->fetch_assoc()){
                 echo "<div class='col-6 col-lg-6'>
                         <blockquote>
-                          <p>$row[Drink]</p>
-                            <small>$row[Location] on $row[Date]</small> </blockquote>
+                          <h3>$row[Drink]</h3>
+                            <small>$row[Location] on $row[Date]</small></blockquote>
                      </div>";
             
             }
@@ -117,12 +117,11 @@
   <div class="container">
     <div class="row" id="rrewards">
       <div class="col-lg-12 page-header text-center">
-        <h2 class="sub" id="title3">REDEEMABLE REWARDS</h2>
+        <?php session_start() ?>
+        <h2 class="sub" id="title3">YOU HAVE <?php echo $_SESSION[points];?> BITTERSWEET POINTS</h2>
       </div>
     </div>
     <div>&nbsp;</div>
-    <?php session_start() ?>
-    <h3>POINTS ON YOUR ACCOUNT: <?php echo $_SESSION[points]; ?></h3>
     <div class="row">
         
         <?php 

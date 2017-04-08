@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php
+        session_start();
+
         // Access the database!
         $servername = "localhost";
         $username = "root";
@@ -34,6 +36,9 @@
             $row = $result->fetch_assoc();
             if(strcmp($row[Password], $password) == 0){
                 $redirect = true;
+                $_SESSION['empName'] = $row[Name];
+                $_SESSION['empLocation'] = $row[Location];
+                
             }
             else{
                 echo "Wrong password!";
@@ -44,7 +49,7 @@
         }
         
         if($redirect){
-            echo "<script type='text/javascript'> window.location.replace('employee.html'); </script>";
+            echo "<script type='text/javascript'> window.location.replace('employee.php'); </script>";
         }
             
     }
@@ -71,6 +76,9 @@
             $row = $result->fetch_assoc();
             if(strcmp($row[Password], $password) == 0){
                 $redirect = true;
+                $_SESSION['custEmail'] = $row[Email];
+                $_SESSION['custName'] = $row[Name];
+                $_SESSION['points'] = $row[Points_Balance];
             }
             else{
                 echo "Wrong password!";
@@ -81,7 +89,7 @@
         }
         
         if($redirect){
-            echo "<script type='text/javascript'> window.location.replace('customer.html'); </script>";
+            echo "<script type='text/javascript'> window.location.replace('customer.php'); </script>";
         }
     }
         

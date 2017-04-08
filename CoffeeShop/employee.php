@@ -51,8 +51,9 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h1 class="text-center" id="title1">Hi Employee,</h1>
-          <p class="text-center" style="color:white" >of 17th Ave SW Calgary, AB location</p>
+          <?php session_start() ?>
+          <h1 class="text-center" id="title1">Hi <?php echo $_SESSION[empName]; ?>,</h1>
+          <p class="text-center" style="color:white" >of <?php echo $_SESSION[empLocation]; ?> location</p>
 </div>
       </div>
     </div>
@@ -99,7 +100,7 @@
     </div>
     <div class="row" id="machine">
       <div class="col-lg-12 page-header text-center">
-        <h2 class="sub">EQUIPTMENTS</h2>
+        <h2 class="sub">EQUIPMENT</h2>
       </div>
     </div>
     <div>&nbsp;</div>

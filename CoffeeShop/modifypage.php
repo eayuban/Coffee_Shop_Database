@@ -118,6 +118,9 @@
 					</div>
 				</div>
 				<div>
+					<div class="input-group input-group-sm"><span class="input-group-addon">Name</span>
+						<input type="text" class="form-control" placeholder="Product">
+					</div>
 					<div class="input-group input-group-sm"><span class="input-group-addon">Type</span>
 						<input type="text" class="form-control" placeholder="small sized input group">
 					</div>
@@ -151,6 +154,9 @@
 						
 						</div>
 						<!-- /input-group -->
+						<div class="input-group input-group-sm"><span class="input-group-addon">Name</span>
+							<input type="text" class="form-control" placeholder="Product">
+						</div>
 						<div class="input-group input-group-sm"><span class="input-group-addon">Amount</span>
 							<input type="text" class="form-control" placeholder="placeholder content">
 						</div>
@@ -172,6 +178,9 @@
 						
 						</div>
 						<!-- /input-group -->
+						<div class="input-group input-group-sm"><span class="input-group-addon">Name</span>
+							<input type="text" class="form-control" placeholder="Product">
+						</div>
 						<div class="input-group input-group-sm"><span class="input-group-addon">Amount</span>
 							<input type="text" class="form-control" placeholder="placeholder content">
 						</div>
@@ -203,8 +212,8 @@
 			&nbsp
 			<form id="form4" name="form4" method="post">
 				<div>
-					<div class="input-group input-group-sm"><span class="input-group-addon">Name</span>
-						<input type="text" class="form-control" placeholder="Employee">
+					<div class="input-group input-group-sm"><span class="input-group-addon">SIN</span>
+						<input type="text" class="form-control" placeholder="Employee's SIN">
 					</div>
 				</div>
 				&nbsp

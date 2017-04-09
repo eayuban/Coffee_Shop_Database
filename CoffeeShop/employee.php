@@ -68,7 +68,7 @@
                 <div class="row">
                     <div class="row" id="recipe">
                         <div class="col-lg-12 page-header text-center">
-                            <h2 class="sub">RECIPE</h2>
+                            <h2 class="sub">Recipe</h2>
                         </div>
                     </div>
                     <div>&nbsp;</div>
@@ -93,7 +93,7 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="row" id="machine">
                     <div class="col-lg-12 page-header text-center">
-                        <h2 class="sub">EQUIPMENT</h2>
+                        <h2 class="sub">Equiptment</h2>
                     </div>
                 </div>
                 <div>&nbsp;</div>
@@ -127,7 +127,7 @@ if ($result->num_rows > 0) {
             <div class="container">
                 <div class="row" id="inventory">
                     <div class="col-lg-12 page-header text-center">
-                        <h2 class="sub">INVENTORY</h2>
+                        <h2 class="sub">Inventory</h2>
                     </div>
                 </div>
                 <div>&nbsp;</div>

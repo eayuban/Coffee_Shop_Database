@@ -73,7 +73,7 @@
 			<div class="row">
 				<div class="row" id="modrecipe">
 					<div class="col-lg-12 page-header text-center">
-						<h2 class="sub">MODIFY RECIPE</h2>
+						<h2 class="sub">Modify Recipe</h2>
 					</div>
 				</div>
 				<form id="form1" name="form1" method="post">
@@ -107,7 +107,7 @@
 			</div>
 			<div class="row" id="modman">
 				<div class="col-lg-12 page-header text-center">
-					<h2 class="sub">MODIFY EQUIPTMENTS</h2>
+					<h2 class="sub">Modify Equiptments</h2>
 				</div>
 			</div>
 			<form id="form2" name="form2" method="post">
@@ -138,7 +138,7 @@
 		<div class="container">
 			<div class="row sub" id="addinven">
 				<div class="col-lg-12 page-header text-center">
-					<h2>ADD INVENTORY</h2>
+					<h2 class="sub">Add Inventory</h2>
 				</div>
 			</div>
 			&nbsp
@@ -197,7 +197,7 @@
 
 			<div class="row sub" id="removeemp">
 				<div class="col-lg-12 page-header text-center">
-					<h2>REMOVE EMPLOYEE</h2>
+					<h2 class="sub">Remove Employee</h2>
 				</div>
 			</div>
 			&nbsp

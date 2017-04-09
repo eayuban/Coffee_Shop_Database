@@ -6827,6 +6827,7 @@ button.close {
     font-family: "Bodoni BE";
     color: white;
 	text-shadow: 1px 1px 1px #685642;
+	font-size: 40px;
 }
 
 #recipe{

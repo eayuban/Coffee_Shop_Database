@@ -67,7 +67,7 @@
   <div class="container ">
 <div class="row" id="purchaseh">
       <div class="col-lg-12 page-header text-center">
-        <h2 class="sub">PURCHASE HISTORY</h2>
+        <h2 class="sub">Purchase History</h2>
       </div>
     </div>
 <div>&nbsp;</div>
@@ -115,7 +115,7 @@
     <div class="row" id="rrewards">
       <div class="col-lg-12 page-header text-center">
         <?php session_start() ?>
-        <h2 class="sub" id="title3">YOU HAVE <?php echo $_SESSION[points];?> BITTERSWEET POINTS</h2>
+        <h2 class="sub" id="title3">You Have <?php echo $_SESSION[points];?> Bittersweet Points</h2>
       </div>
     </div>
     <div>&nbsp;</div>

@@ -179,7 +179,8 @@
                 $sql = "SELECT *
                                 FROM time_availability, employee
                                 WHERE Date between '$currentDate' AND '$newDate' AND
-                                ESIN = SIN
+                                ESIN = SIN AND
+                                Location = '$_SESSION[empLocation]'
                                 ORDER BY Date, Start";
 
                 $result = $conn->query($sql);

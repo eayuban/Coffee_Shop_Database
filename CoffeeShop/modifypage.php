@@ -134,6 +134,13 @@
 				</div>
 			</form>
 			<div>&nbsp;</div>
+		  <div class="row" id="schedban">
+			  <div class="col-lg-12 page-header text-center">
+			    <h2 class="sub">Schedule</h2>
+		      </div>
+		  </div>
+			<div> ADD THE SCHED STUFF HERE</div>
+			<div>&nbsp;</div>
 
 		</div>
 		<!-- /container -->

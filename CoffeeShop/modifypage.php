@@ -73,8 +73,9 @@
                     <form action="addRemoveDrink.php" id="form1" name="form1" method="post">
                         <div class="text-center">
                             <div class="checkbox">
-                                <label><input type="radio" name="AddOrRemove" value="Remove">Remove</label> &nbsp &nbsp &nbsp
-                                <label><input type="radio" name="AddOrRemove" value="Add">Add</label>
+                                <label><input type="radio" name="AddOrUpdateOrRemove" value="Remove">Remove</label> &nbsp &nbsp &nbsp
+                                <label><input type="radio" name="AddOrUpdateOrRemove" value="Add">Add</label> &nbsp &nbsp &nbsp
+                                <label><input type="radio" name="AddOrUpdateOrRemove" value="Update">Update</label>
                             </div>
                         </div>
                         <div>
@@ -85,7 +86,7 @@
                                 <input type="text" name="drinkType" class="form-control" placeholder="Type">
                             </div>
                             <div class="input-group input-group-sm"><span class="input-group-addon">$</span>
-                                <input type="text" name ="price" class="form-control" placeholder="Price">
+                                <input type="number" name ="price" class="form-control" placeholder="Price">
                                 <span class="input-group-addon">.00</span>
                             </div>
                             <div class="input-group"><span class="input-group-addon">Recipe</span>
@@ -101,7 +102,7 @@
                 </div>
                 <div class="row" id="modman">
                     <div class="col-lg-12 page-header text-center">
-                        <h2 class="sub">Modify Equiptments</h2>
+                        <h2 class="sub">Modify Equipment</h2>
                     </div>
                 </div>
                 <form action="addRemoveMachinery.php" id="form2" name="form2" method="post">

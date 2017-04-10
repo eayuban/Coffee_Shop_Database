@@ -270,13 +270,13 @@
                 <form action="addsale.php" id="form3" name="form3" method="post">
                     <div>
                         <div class="input-group input-group-sm"><span class="input-group-addon">Date</span>
-                            <input type="date" name="date" class="form-control" >
+                            <input type="date" required="true" name="date" class="form-control" >
                         </div>
                         <div class="input-group input-group-sm"><span class="input-group-addon">Drink</span>
-                            <input type="text" name="drinkType" class="form-control" placeholder="Cofee/Tea">
+                            <input type="text" required="true" name="drinkType" class="form-control" placeholder="Cofee/Tea">
                         </div>
                         <div class="input-group input-group-sm"><span class="input-group-addon">Customer's Email</span>
-                            <input type="email" name="custEmail" class="form-control" placeholder="noname@exmample.com">
+                            <input type="email" required="true" name="custEmail" class="form-control" placeholder="noname@exmample.com">
                         </div>
                     </div>
 

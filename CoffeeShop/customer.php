@@ -121,7 +121,11 @@
                 echo "<div class='col-xs-6 col-lg-4'>
                         <h3>$row[Type]</h3>
                         <p> <i class='icon-desktop '></i>$row[PointCost] Points</p>
-                        <p><a class='btn btn-default' href='redeemReward.php'>Redeem! »</a></p>
+                        <p>
+                        <form action = 'redeemReward.php' method='post'>
+                        <button class='btn btn-default' name='reward' value='$row[Type]'>Redeem!</button>
+                        </form>
+                        </p>
                       </div>";
             
             }

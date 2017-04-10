@@ -122,7 +122,11 @@
                 echo "<div class='col-xs-6 col-lg-4'>
                         <h3>$row[Type]</h3>
                         <p> <i class='icon-desktop '></i>$row[PointCost] Points</p>
-                        <p><a class='btn btn-default' href='redeemReward.php'>Redeem! »</a></p>
+                        <p>
+                        <form action = 'redeemReward.php' method='post'>
+                        <button class='btn btn-default' name='reward' value='$row[Type]'>Redeem!</button>
+                        </form>
+                        </p>
                       </div>";
             
             }
@@ -137,7 +141,37 @@
     </div>
     <div>&nbsp;</div>
     <div class="row">
-     NEED TO MODIFY <br>
+    <?php
+        session_start();
+        $servername = "localhost";
+        $username = "root";
+        $password = "group15database";
+        $db = "coffee shop"; 
+        
+        $conn = new mysqli($servername, $username, $password, $db);
+        if ($conn->connect_error){
+            die("Connection failed".$conn->connect_error);
+        }
+        $sql = "SELECT
+                *
+                FROM
+                redeemed_rewards
+                WHERE
+                CustomerEmail = '$_SESSION[custEmail]'";            
+        $result = $conn->query($sql);
+        
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo "<div class='col-6 col-lg-6'>
+                        <blockquote>
+                          <h3>$row[RewardType]</h3>
+                        </blockquote>
+                     </div>";
+            
+            }
+        }
+        
+        ?>
     </div>
     <div>&nbsp;</div>
   </div>

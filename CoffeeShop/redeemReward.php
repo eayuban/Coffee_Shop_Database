@@ -22,6 +22,9 @@
 
         closeDatabaseConn($conn);
 
+        echo "<script type='text/javascript'> window.location.replace('customer.php'); </script>";
+
+        
         function redeemReward($conn) {
             $sql = "SELECT PointCost
                     FROM rewards
@@ -78,7 +81,6 @@
 
         function closeDatabaseConn($dbConn) {
             $dbConn->close();
-            die("Disconnected from Database.");
         }
         ?>
     </body>

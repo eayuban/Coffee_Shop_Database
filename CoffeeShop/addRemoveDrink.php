@@ -31,6 +31,8 @@
             }
         
             closeDatabaseConn($conn);
+            echo "<script type='text/javascript'> window.location.replace('modifypage.php'); </script>";
+
             
             function addDrink($conn){
             
@@ -138,7 +140,6 @@
         
         function closeDatabaseConn($dbConn){
             $dbConn -> close();
-            die("Disconnected from Database.");
         }
         
         ?>

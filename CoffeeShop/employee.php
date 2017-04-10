@@ -132,25 +132,34 @@
                                 </div>
                             </div>
                     </form>
-                            <!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-group"><span class="input-group-addon">
-                                        <label> Your Schedule</label></span>
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="input-group"><span class="input-group-addon">
+                                <label> Your Scheduled Times</label></span>
+                        </div>
+                        <!-- /input-group -->
+                        &nbsp
+                         <?php
+                            $sql = "SELECT
+                                    *
+                                    FROM
+                                    time_availability
+                                    WHERE
+                                    ESIN = '$_SESSION[empSIN]'";
 
-                                </div>
-                                <!-- /input-group -->
-                                <div></div>
+                            $result = $conn->query($sql);
 
-                                <div></div> 
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<div class='col-lg-4 col-sm-12 text-center'> 
+                                          <h4>$row[Date]</h4>
+                                          <p><small>$row[Start] to $row[Finish]</small></p>
+                                          </div>";
+                                }
+                            }
+                            ?>
 
-                                <div></div>
-
-                                <div></div> 
-
-                                &nbsp
-                                <div></div>
-
-                            </div>
+                    </div>
                 </div>
 
 

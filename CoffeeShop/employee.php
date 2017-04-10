@@ -12,8 +12,7 @@
     if ($conn->connect_error) {
         die("Connection failed" . $conn->connect_error);
     }
-    ?>
-    <head>
+    ?><head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,7 +63,7 @@
 
         <!--  SECTION-1 -->
         <section>
-            <div class="container ">
+          <div class="container ">
                 <div class="row">
                     <div class="row" id="recipe">
                         <div class="col-lg-12 page-header text-center">
@@ -83,7 +82,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='col-lg-4 col-sm-12 text-center'> <img class='img-circle' alt='140x140' style='width: 140px; height: 140px;' src='images/140X140.gif' data-holder-rendered='true'>
+        echo "<div class='col-lg-4 col-sm-12 text-center'> 
                         <h3>$row[Name]</h3>
                         <p>$row[Recipe]</p>
                     </div>";
@@ -91,11 +90,67 @@ if ($result->num_rows > 0) {
 }
 ?>
                 </div>
-                <div class="row" id="machine">
-                    <div class="col-lg-12 page-header text-center">
-                        <h2 class="sub">Equiptment</h2>
-                    </div>
+                <div>&nbsp;</div>
+               <div class="row">
+              <div class="row" id="schedban">
+                  <div class="col-lg-12 page-header text-center">
+                    <h2 class="sub">Schedule</h2>
+                  </div>
                 </div>
+               			 
+                			&nbsp
+			<form id="form3" name="form3" method="post">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="input-group"><span class="input-group-addon">
+      <label>Add Time Availability</label>
+      </span>
+						
+						</div>
+						<!-- /input-group -->
+<div class="input-group input-group-sm"><span class="input-group-addon">Date</span>
+                  <input type="date" class="form-control" placeholder="small sized input group">
+                </div>
+                <div class="input-group input-group-sm"><span class="input-group-addon">Start Time</span>
+                  <input type="time" class="form-control" placeholder="small sized input group">
+                </div>
+                <div class="input-group input-group-sm"><span class="input-group-addon">End Time</span>
+                  <input type="time" class="form-control" placeholder="small sized input group">
+                </div>
+						&nbsp
+						<div class="text-center">
+							<button type="button" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+					<!-- /.col-lg-6 -->
+					<div class="col-lg-6">
+						<div class="input-group"><span class="input-group-addon">
+  	<label> Your Schedule</label></span>
+						
+						</div>
+						<!-- /input-group -->
+						<div></div>
+					
+						<div></div> 
+						
+						<div></div>
+					
+						<div></div> 
+					
+						&nbsp
+						<div></div>
+					
+					</div>
+			</form>
+           </div>
+       
+               
+<div>&nbsp;</div>
+<div class="row" id="machine">
+        <div class="col-lg-12 page-header text-center">
+                        <h2 class="sub">Equiptment</h2>
+      </div>
+            </div>
                 <div>&nbsp;</div>
                 <div class="row">
                     
@@ -120,19 +175,18 @@ if ($result->num_rows > 0) {
 }
 ?>
                 </div>
+            <div>&nbsp;</div>
+            <div class="row" id="inventory">
+                  <div class="col-lg-12 page-header text-center">
+                    <h2 class="sub">Inventory</h2>
+                  </div>
+                </div>
+            <div>&nbsp;</div>
 
             </div>
-            <!-- /container -->
-
-            <div class="container">
-                <div class="row" id="inventory">
-                    <div class="col-lg-12 page-header text-center">
-                        <h2 class="sub">Inventory</h2>
-                    </div>
-                </div>
-                <div>&nbsp;</div>
-                <div class="row">
-<?php
+          <div class="row">
+            <div class="row">
+              <?php
 $sql =          "SELECT
                 *
                 FROM
@@ -154,8 +208,33 @@ if ($result->num_rows > 0) {
     }
 }
 ?>
-                </div>
             </div>
+            <div>&nbsp;</div>
+            <div class="row" id="sales">
+              <div class="col-lg-12 page-header text-center">
+                <h2 class="sub">Sales</h2>
+              </div>
+            </div>
+            <div>&nbsp;</div>
+            <div>
+              <div class="input-group input-group-sm"><span class="input-group-addon">Date</span>
+                <input type="date" class="form-control" >
+              </div>
+              <div class="input-group input-group-sm"><span class="input-group-addon">Drink</span>
+                <input type="text" class="form-control" placeholder="Cofee/Tea">
+               </div>
+                <div class="input-group input-group-sm"><span class="input-group-addon">Customer's Email</span>
+                <input type="email" class="form-control" placeholder="noname@exmample.com">
+               </div>
+            </div>
+          </div>
+           <div>&nbsp;</div>
+           <div class="text-center">
+			<button type="button" class="btn btn-primary">Add</button>
+			</div>
+           <div>&nbsp;</div>
+            <!-- /container -->
+
             <!-- / CONTAINER--> 
         </section>
         <div class="well"> </div>

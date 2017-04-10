@@ -6919,3 +6919,14 @@ button.close {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+#schedban{
+	background-image: url(../images/schedban.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#sales {
+	background-image: url(../images/inventory.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}

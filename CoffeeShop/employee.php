@@ -20,7 +20,7 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="css/bootstrap.css">
-
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     </head>
     <body>
         <nav class="navbar navbar-default">

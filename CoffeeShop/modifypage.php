@@ -10,6 +10,7 @@
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <script src="../jQueryAssets/jquery-1.11.1.min.js"></script>
         <script src="../jQueryAssets/jquery.ui-1.10.4.button.min.js"></script>
     </head>

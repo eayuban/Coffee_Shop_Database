@@ -72,6 +72,8 @@
             }
             
             $conn -> close();
+            echo "<script type='text/javascript'> window.location.replace('modifypage.php'); </script>";
+
         ?>
     </body>
 

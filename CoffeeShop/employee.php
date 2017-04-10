@@ -139,31 +139,63 @@
                         </div>
                         <!-- /input-group -->
                         &nbsp
-                         <?php
-                            $sql = "SELECT
+                        <?php
+                        $sql = "SELECT
                                     *
                                     FROM
                                     time_availability
                                     WHERE
-                                    ESIN = '$_SESSION[empSIN]'";
+                                    ESIN = $_SESSION[empSIN]";
 
-                            $result = $conn->query($sql);
-
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    echo "<div class='col-lg-4 col-sm-12 text-center'> 
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<div class='col-lg-4 col-sm-12 text-center'> 
                                           <h4>$row[Date]</h4>
                                           <p><small>$row[Start] to $row[Finish]</small></p>
                                           </div>";
-                                }
                             }
-                            ?>
+                        }
+                        ?>
 
-                    </div>
+                    </div>                  
                 </div>
+                <?php
+                if ($_SESSION['manager'] == NULL) {
+                    echo "
+                                        <div>&nbsp;</div>
+                        <div class='row'>
 
+<span class='input-group-addon'>
+                                        <label>All Employee availability for the next 7 days</label>
+        </span>";
+                
+                date_default_timezone_set("America/Edmonton");
+                $currentDate = date("Y-m-d");
+                $date = new DateTime($currentDate);
+                $date->add(new DateInterval('P7D'));
+                $newDate = $date->format('Y-m-d');
 
-                <div>&nbsp;</div>
+                $sql = "SELECT *
+                                FROM time_availability, employee
+                                WHERE Date between '$currentDate' AND '$newDate' AND
+                                ESIN = SIN
+                                ORDER BY Date, Start";
+
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div class='col-lg-4 col-sm-12 text-center'> 
+                                          <h4>$row[Date]</h4>
+                                          <p><small>$row[Start] to $row[Finish]</small></p>
+                                          <p><small>$row[Name]</small></p>
+                                          </div>";
+                    }
+                }
+                echo "</div>";
+                }
+                ?>
+                <div>&nbsp</div>
                 <div class="row" id="machine">
                     <div class="col-lg-12 page-header text-center">
                         <h2 class="sub">Equiptment</h2>
@@ -235,27 +267,27 @@
                 </div>
                 <div>&nbsp;</div>
                 <form action="addsale.php" id="form3" name="form3" method="post">
-            <div>
-              <div class="input-group input-group-sm"><span class="input-group-addon">Date</span>
-                <input type="date" name="date" class="form-control" >
-              </div>
-              <div class="input-group input-group-sm"><span class="input-group-addon">Drink</span>
-                <input type="text" name="drinkType" class="form-control" placeholder="Cofee/Tea">
-               </div>
-                <div class="input-group input-group-sm"><span class="input-group-addon">Customer's Email</span>
-                <input type="email" name="custEmail" class="form-control" placeholder="noname@exmample.com">
-               </div>
-            </div>
-          
-           <div>&nbsp;</div>
-           <div class="text-center">
-			<button type="submit" class="btn btn-primary">Add</button>
-			</div>
-            </form>
-            <div>&nbsp;</div>
-            <!-- /container -->
+                    <div>
+                        <div class="input-group input-group-sm"><span class="input-group-addon">Date</span>
+                            <input type="date" name="date" class="form-control" >
+                        </div>
+                        <div class="input-group input-group-sm"><span class="input-group-addon">Drink</span>
+                            <input type="text" name="drinkType" class="form-control" placeholder="Cofee/Tea">
+                        </div>
+                        <div class="input-group input-group-sm"><span class="input-group-addon">Customer's Email</span>
+                            <input type="email" name="custEmail" class="form-control" placeholder="noname@exmample.com">
+                        </div>
+                    </div>
 
-            <!-- / CONTAINER--> 
+                    <div>&nbsp;</div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+                <div>&nbsp;</div>
+                <!-- /container -->
+
+                <!-- / CONTAINER--> 
         </section>
         <div class="well"> </div>
 

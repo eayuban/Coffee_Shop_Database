@@ -101,7 +101,7 @@
                 </div>
                 <div class="row" id="modman">
                     <div class="col-lg-12 page-header text-center">
-                        <h2 class="sub">Modify Equiptments</h2>
+                        <h2 class="sub">Modify Equipment</h2>
                     </div>
                 </div>
                 <form action="addRemoveMachinery.php" id="form2" name="form2" method="post">

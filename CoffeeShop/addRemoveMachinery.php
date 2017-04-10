@@ -41,10 +41,10 @@
                         ('$machineType', '$year', '$location', '$machineName')";
             
                 if($conn->query($sql) == TRUE){
-                    echo "Added $drinkName successfully!<br>";
+                    echo "Added $machineName successfully!<br>";
                 }
                 else{
-                    echo "$drinkName was not added successfully...<br>".$conn->error."<br>";
+                    echo "$machineName was not added successfully...<br>".$conn->error."<br>";
                 }
             }
             

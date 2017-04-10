@@ -19,6 +19,8 @@
             
             addIngredient($conn);
             closeDatabaseConn($conn);
+            echo "<script type='text/javascript'> window.location.replace('modifypage.php'); </script>";
+
             
             function addIngredient($conn){            
                 $ingreName = $_POST[ingreName];
@@ -55,7 +57,6 @@
         
         function closeDatabaseConn($dbConn){
             $dbConn -> close();
-            die("Disconnected from Database.");
         }
         
         ?>

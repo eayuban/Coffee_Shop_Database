@@ -25,6 +25,9 @@
                 removeMachinery($conn);
             }
             closeDatabaseConn($conn);
+            echo "<script type='text/javascript'> window.location.replace('modifypage.php'); </script>";
+
+            
             
             function addMachinery($conn){
             
@@ -85,7 +88,6 @@
         
         function closeDatabaseConn($dbConn){
             $dbConn -> close();
-            die("Disconnected from Database.");
         }
         
         ?>

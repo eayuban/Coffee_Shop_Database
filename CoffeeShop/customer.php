@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <!--Adobe Dreamweaver (Version CC) [Computer software]. (2016). San Jose, CA: Adobe Systems Incorporated.-->
+<?php
+        session_start();
+        $servername = "localhost";
+        $username = "root";
+        $password = "group15database";
+        $db = "coffee shop"; 
+        
+        $conn = new mysqli($servername, $username, $password, $db);
+        if ($conn->connect_error){
+            die("Connection failed".$conn->connect_error);
+        }
+?>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -36,7 +48,6 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <?php session_start() ?>
           <h1 class="text-center" id="title1">Hi <?php echo $_SESSION[custName]; ?>! </h1>
 </div>
       </div>
@@ -57,16 +68,6 @@
 <div>&nbsp;</div>
     <div class="row">
         <?php
-        session_start();
-        $servername = "localhost";
-        $username = "root";
-        $password = "group15database";
-        $db = "coffee shop"; 
-        
-        $conn = new mysqli($servername, $username, $password, $db);
-        if ($conn->connect_error){
-            die("Connection failed".$conn->connect_error);
-        }
         $sql = "SELECT
                 *
                 FROM
@@ -98,8 +99,19 @@
   <div class="container">
     <div class="row" id="rrewards">
       <div class="col-lg-12 page-header text-center">
-        <?php session_start() ?>
-        <h2 class="sub" id="title3">You Have <?php echo $_SESSION[points];?> Bittersweet Points</h2>
+        <h2 class="sub" id="title3">You Have <?php 
+                $sql = "SELECT
+                Points_Balance
+                FROM
+                customer
+                WHERE
+                Email = '$_SESSION[custEmail]'";
+                
+                $result = $conn->query($sql);
+                
+                $row = $result->fetch_assoc();
+                
+        echo $row[Points_Balance];?> Bittersweet Points</h2>
       </div>
     </div>
     <div>&nbsp;</div>
@@ -110,9 +122,10 @@
         $sql = "SELECT
                 *
                 FROM
-                rewards
+                rewards, customer
                 WHERE
-                PointCost <= $_SESSION[points]";
+                Email = '$_SESSION[custEmail]' AND
+                PointCost <= Points_Balance";
         
         $result = $conn->query($sql);
         
@@ -156,7 +169,8 @@
                 FROM
                 redeemed_rewards
                 WHERE
-                CustomerEmail = '$_SESSION[custEmail]'";            
+                CustomerEmail = '$_SESSION[custEmail]'
+                ORDER BY RewardType";            
         $result = $conn->query($sql);
         
         if($result->num_rows > 0){

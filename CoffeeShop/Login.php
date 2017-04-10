@@ -1,113 +1,114 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Coffee Shop</title>
-    </head>
-    
-    <body>
-        <h1>You are here because you attempted to LOGIN!</h1>
-        <?php
-            // Access the database!
-            $servername = "localhost";
-            $username = "root";
-            $password = "group15database";
-            $db = "coffee shop"; 
-            
-            $conn = connectToDatabase($servername, $username, $password, $db);
-            
-            $username = $_POST[userData];
-            
-            if (ctype_digit($username) == true){
-                employeeLogin($conn, $username);
-            }
-            else{
-                customerLogin($conn, $username);
-            }
-            closeDatabaseConn($conn);
-            
-        function employeeLogin($connection, $sin){
-            echo "Attempting to login to employee with SIN: '$sin'<br><br>";
+<?php
+        session_start();
 
-            $password = $_POST[password];
+        // Access the database!
+        $servername = "localhost";
+        $username = "root";
+        $password = "group15database";
+        $db = "coffee shop"; 
             
-            $sql = "SELECT
-                    *
-                    FROM
-                    employee
-                    WHERE
-                    SIN = '$sin'";
+        $conn = connectToDatabase($servername, $username, $password, $db);
             
-            $result = $connection->query($sql);
+        $username = $_POST[userData];
             
-            if($result->num_rows > 0){
-                $row = $result->fetch_assoc();
-                if(strcmp($row[Password], $password) == 0){
-                    echo "Employee Sign in Successful!<br><br>";
-                    echo "Welcome $row[Name], your SIN is $row[SIN]<br>";
-                }
-                else{
-                    echo "Wrong password!";
-                }
-            }
-            else{
-                echo "Invalid SIN!";
-            }
-            
+        if (ctype_digit($username) == true){
+            employeeLogin($conn, $username);
         }
-
-        function customerLogin($connection, $email){
-            echo "Attempting to login to customer with email: '$email'<br><br>";
-
-            if (substr_count($email, '@') != 1){
-                echo "Login Information not valid!";
-                closeDatabaseConn($connection);
-            }
+        else{
+            customerLogin($conn, $username);
+        }
             
-            $password = $_POST[password];
+    function employeeLogin($connection, $sin){
+        $redirect = false;
+        $password = $_POST[password];
             
-            $sql = "SELECT
-                    *
-                    FROM
-                    customer
-                    WHERE
-                    Email = '$email'";
+        $sql = "SELECT
+                *
+                FROM
+                employee
+                WHERE
+                SIN = '$sin'";
             
-            $result = $connection->query($sql);
+        $result = $connection->query($sql);
             
-            if($result->num_rows > 0){
-                $row = $result->fetch_assoc();
-                if(strcmp($row[Password], $password) == 0){
-                    echo "Customer Sign in Successful!<br><br>";
-                    echo "Welcome $row[Name]!<br>";
-                    echo "Your birthdate is $row[Birthday]!<br>";
-                    echo "Your points balance is $row[Points_Balance] <br>";
-                }
-                else{
-                    echo "Wrong password!";
-                }
+        if($result->num_rows > 0){
+            $row = $result->fetch_assoc();
+            if(strcmp($row[Password], $password) == 0){
+                $redirect = true;
+                $_SESSION['empSIN'] = $row[SIN];
+                $_SESSION['empName'] = $row[Name];
+                $_SESSION['empLocation'] = $row[Location];
+                $_SESSION['manager'] = $row[ManagerSIN];
+                
             }
             else{
-                echo "Invalid Email!";
+                echo "Wrong password!";
             }
+        }
+        else{
+            echo "Invalid SIN!";
         }
         
-        function connectToDatabase($server, $user, $psswrd, $database){
-            $conn = new mysqli($server, $user, $psswrd, $database);
+        if($redirect){
+            echo "<script type='text/javascript'> window.location.replace('employee.php'); </script>";
+        }
             
-            if ($conn->connect_error){
-                die("Connection failed".$conn->connect_error);
+    }
+
+    function customerLogin($connection, $email){
+        $redirect = false;
+        if (substr_count($email, '@') != 1){
+            echo "Login Information not valid!";
+            closeDatabaseConn($connection);
+        }
+            
+        $password = $_POST[password];
+            
+        $sql = "SELECT
+                *
+                FROM
+                customer
+                WHERE
+                Email = '$email'";
+            
+        $result = $connection->query($sql);
+            
+        if($result->num_rows > 0){
+            $row = $result->fetch_assoc();
+            if(strcmp($row[Password], $password) == 0){
+                $redirect = true;
+                $_SESSION['custEmail'] = $row[Email];
+                $_SESSION['custName'] = $row[Name];
+                $_SESSION['points'] = $row[Points_Balance];
             }
             else{
-                echo "Connected to Database $database...<br>";
-                return $conn;
+                echo "Wrong password!";
             }
         }
-        
-        function closeDatabaseConn($dbConn){
-            $dbConn -> close();
-            die("Disconnected from Database.");
+        else{
+            echo "Invalid Email!";
         }
+        
+        if($redirect){
+            echo "<script type='text/javascript'> window.location.replace('customer.php'); </script>";
+        }
+    }
+        
+    function connectToDatabase($server, $user, $psswrd, $database){
+        $conn = new mysqli($server, $user, $psswrd, $database);
             
-        ?>
-    </body>
+        if ($conn->connect_error){
+            die("Connection failed".$conn->connect_error);
+        }
+        else{
+            return $conn;
+        }
+    }
+        
+    function closeDatabaseConn($dbConn){
+        $dbConn -> close();
+         die();
+    }
+            
+?>

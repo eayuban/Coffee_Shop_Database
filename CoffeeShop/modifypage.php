@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--Adobe Dreamweaver (Version CC) [Computer software]. (2016). San Jose, CA: Adobe Systems Incorporated.-->
 <html lang="en">
-
+<?php session_start() ?>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,9 +49,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h1 class="text-center" id="title1">Hi Manager,</h1>
+                            <h1 class="text-center" id="title1">Hi <?php echo "$_SESSION[empName]";?>,</h1>
 
-                            <p class="text-center" style="color: #FFFFFF; text-shadow: 1px 1px 1px #685642;">of Location</p>
+                            <p class="text-center" style="color: #FFFFFF; text-shadow: 1px 1px 1px #685642;">Manager of <?php echo "$_SESSION[empLocation]";?></p>
                         </div>
                     </div>
                 </div>

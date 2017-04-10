@@ -167,7 +167,7 @@
                         <div class='row'>
 
 <span class='input-group-addon'>
-                                        <label>All Employee availability for the next 7 days</label>
+                                        <label>All Employee availability at $_SESSION[empLocation] for the next 7 days</label>
         </span>";
                 
                 date_default_timezone_set("America/Edmonton");

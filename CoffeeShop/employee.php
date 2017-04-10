@@ -234,22 +234,24 @@
                     </div>
                 </div>
                 <div>&nbsp;</div>
-                <div>
-                    <div class="input-group input-group-sm"><span class="input-group-addon">Date</span>
-                        <input type="date" class="form-control" >
-                    </div>
-                    <div class="input-group input-group-sm"><span class="input-group-addon">Drink</span>
-                        <input type="text" class="form-control" placeholder="Cofee/Tea">
-                    </div>
-                    <div class="input-group input-group-sm"><span class="input-group-addon">Customer's Email</span>
-                        <input type="email" class="form-control" placeholder="noname@exmample.com">
-                    </div>
-                </div>
+                <form action="addsale.php" id="form3" name="form3" method="post">
+            <div>
+              <div class="input-group input-group-sm"><span class="input-group-addon">Date</span>
+                <input type="date" name="date" class="form-control" >
+              </div>
+              <div class="input-group input-group-sm"><span class="input-group-addon">Drink</span>
+                <input type="text" name="drinkType" class="form-control" placeholder="Cofee/Tea">
+               </div>
+                <div class="input-group input-group-sm"><span class="input-group-addon">Customer's Email</span>
+                <input type="email" name="custEmail" class="form-control" placeholder="noname@exmample.com">
+               </div>
             </div>
-            <div>&nbsp;</div>
-            <div class="text-center">
-                <button type="button" class="btn btn-primary">Add</button>
-            </div>
+          
+           <div>&nbsp;</div>
+           <div class="text-center">
+			<button type="submit" class="btn btn-primary">Add</button>
+			</div>
+            </form>
             <div>&nbsp;</div>
             <!-- /container -->
 

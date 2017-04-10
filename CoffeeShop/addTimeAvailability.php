@@ -19,6 +19,8 @@
 
         addTimeAvailability($conn);
         closeDatabaseConn($conn);
+        echo "<script type='text/javascript'> window.location.replace('employee.php'); </script>";
+
 
         function addTimeAvailability($conn) {
             $sin = $_SESSION[empSIN];
@@ -51,7 +53,6 @@
 
         function closeDatabaseConn($dbConn) {
             $dbConn->close();
-            die("Disconnected from Database.");
         }
         ?>
     </body>

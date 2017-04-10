@@ -21,24 +21,8 @@
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"> </li>
-        <li> </li>
-      </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group"> </div>
-</form>
       <ul class="nav navbar-nav navbar-right">
-        <li> </li>
-        <li class="dropdown">
-<ul class="dropdown-menu">
-            <li><a href="#">Action</a> </li>
-            <li><a href="#">Another action</a> </li>
-            <li><a href="#">Something else here</a> </li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a> </li>
-          </ul>
-        </li>
+        <li><a href="homePage.html">Log Out</a> </li>
       </ul>
     </div>
     <!-- /.navbar-collapse --> 

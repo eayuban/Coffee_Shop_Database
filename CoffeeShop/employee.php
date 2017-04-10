@@ -33,16 +33,20 @@
                         <li> </li>
                     </ul>
 <ul class="nav navbar-nav navbar-right">
-          <li> </li>
                         <?php
         if ($_SESSION['manager'] == NULL) {
             echo
 				'<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">Modify <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="modifypage.php">Recipe/Equiptment/Inventory</a> </li>
+								<li><a href="homePage.html">Log Out</a> </li>
                             </ul>
                         </li>';
         }
+		else{
+			echo
+				'<li><a href="homePage.html">Log Out</a> </li>';
+		}
         ?>
                         
                     </ul>

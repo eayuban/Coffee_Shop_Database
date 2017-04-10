@@ -202,8 +202,8 @@
                 &nbsp
                 <form action="removeEmployee.php" id="form4" name="form4" method="post">
                     <div>
-                        <div class="input-group input-group-sm"><span class="input-group-addon">Name</span>
-                            <input name="sin" type="text" class="form-control" placeholder="Employee">
+                        <div class="input-group input-group-sm"><span class="input-group-addon">SIN</span>
+                            <input name="sin" type="text" class="form-control" placeholder="Employee's SIN">
                         </div>
                     </div>
                     &nbsp

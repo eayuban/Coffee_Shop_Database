@@ -19,6 +19,8 @@
             
             addEmployee($conn);
             closeDatabaseConn($conn);
+            echo "<script type='text/javascript'> window.location.replace('employee.php'); </script>";
+
             
             function addEmployee($conn){
             
@@ -77,7 +79,6 @@
         
         function closeDatabaseConn($dbConn){
             $dbConn -> close();
-            die("Disconnected from Database.");
         }
         
         ?>

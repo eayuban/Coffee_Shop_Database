@@ -153,39 +153,6 @@
     <div>&nbsp;</div>
     <div class="row">
      NEED TO MODIFY <br>
-      <?php
-        session_start();
-        $servername = "localhost";
-        $username = "root";
-        $password = "group15database";
-        $db = "coffee shop"; 
-        
-        $conn = new mysqli($servername, $username, $password, $db);
-        if ($conn->connect_error){
-            die("Connection failed".$conn->connect_error);
-        }
-        $sql = "SELECT
-                *
-                FROM
-                sales
-                WHERE
-                CustomerInfo = '$_SESSION[custEmail]'
-                ORDER BY
-                Date";            
-        $result = $conn->query($sql);
-        
-        if($result->num_rows > 0){
-            while($row = $result->fetch_assoc()){
-                echo "<div class='col-6 col-lg-6'>
-                        <blockquote>
-                          <h3>$row[Drink]</h3>
-                            <small>$row[Location] on $row[Date]</small></blockquote>
-                     </div>";
-            
-            }
-        }
-        
-        ?>
     </div>
     <div>&nbsp;</div>
   </div>

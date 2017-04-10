@@ -8,6 +8,7 @@
     <body>
         <h1>You are here because you ADDED an EMPLOYEE to the Database</h1>
         <?php
+            session_start();
             // Access the database!
             $servername = "localhost";
             $username = "root";
@@ -27,17 +28,16 @@
                 $newPassword = $_POST[newPassword];
                 $confirmation = $_POST[confirmation];
                 $name = $_POST[name];
-                $manager = $_POST[managersin];
-            
+                
                 if(strcmp($newPassword,$confirmation) == -1){
                     echo("Your passwords do not match!<br>");
                     closeDatabaseConn($conn);
                 }
                 
                 $sql = "INSERT
-                        INTO employee (SIN, Name, ManagerSIN, Password)
+                        INTO employee (SIN, Name, ManagerSIN, Password, Location)
                         VALUES
-                        ('$sin', '$name', '$manager', '$newPassword')";
+                        ('$sin', '$name', '$_SESSION[empSIN]', '$newPassword', '$_SESSION[empLocation]')";
             
                     if($conn->query($sql) == TRUE){
                     echo "Added $_POST[name] successfully!<br>";

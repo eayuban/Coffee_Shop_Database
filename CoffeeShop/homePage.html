@@ -1,40 +1,155 @@
 <!DOCTYPE html>
-<!--
-Manmeet Dhaliwal
-471 Sample project to show connection to local database
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Coffee Shop</title>
-    </head>
-    <body>
-        <h1>PHP and MySQL testing page</h1>
-        <h2>Adding an Employee!</h2>
-        <form action="addEmployee.php" method="post">
-            SIN: <input type="number" name="sin" min="100000000" max="999999999">
-            New Password: <input type="password" name="newPassword">
-            Confirm New Password: <input type="password" name="confirmation">
-            Name: <input type="text" name="name" maxlength="255">
-            Manager SIN: <input type="number" name="managersin" min="100000000" max="999999999">
-            <input type="submit">        
-        </form>
-        <h2>Removing an Employee!</h2>
-        <form action="removeEmployee.php" method="post">
-            SIN: <input type="number" name="sin" min="100000000" max="999999999">
-            <input type="submit"> 
-        </form>
-        <h2>Logging in as a Customer!</h2>
-        <form action="CustomerLogin.php" method="post">
-            Email: <input type="text" name="email">
-            Password: <input type="password" name="password">
-            <input type="submit">
-        </form>
-        <h2>Logging in as an Employee!</h2>
-        <form action="EmployeeLogin.php" method="post">
-            SIN: <input type="number" name="sin" min="100000000" max="999999999">
-            Password: <input type="password" name="password">
-            <input type="submit">
-        </form>
-    </body>
+<!--Adobe Dreamweaver (Version CC) [Computer software]. (2016). San Jose, CA: Adobe Systems Incorporated.-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Local Coffee Shop</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.css">
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+</div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+        <li> </li>
+      </ul>
+      <form action="Login.php" method="post" class="navbar-form navbar-right" role="search">
+        <div class="form-group"> 
+        <input type="text" name="userData" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default">Log In</button>
+      </form>
+
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+
+<!-- HEADER -->
+<header>
+  <div class="jumbotron" id="bannerf">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="text-center" id="title1">The Local</h1>
+          <hr id="line">
+</div>
+        <h1 class="text-center" id="title2">Coffee Shop</h1>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- / HEADER --> 
+
+<!--  SECTION-1 -->
+<section>
+<div class="container ">
+    <div class="row">
+<div class="row" id="menu">
+  <div class="col-lg-12 page-header text-center">
+    <h2 class="sub">MENU</h2>
+  </div>
+</div>
+<div>&nbsp;</div>
+<div class="col-lg-4 col-sm-12 text-center"> <img class="img-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/latte.jpg" data-holder-rendered="true">
+  <h3>Latte</h3>
+  <p>A single shot of espresso to three parts of steamed milk.</p>
+</div>
+      <div class="col-lg-4 col-sm-12 text-center"><img class="img-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/espresso.jpg" data-holder-rendered="true">
+        <h3>Espresso</h3>
+        <p>A strong black coffee made by forcing steam through dark-roast aromatic coffee beans at high pressure in an espresso machine.<br>
+        </p>
+      </div>
+      <div class="col-lg-4 col-sm-12 text-center"><img class="img-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/cappuccino.jpg" data-holder-rendered="true">
+        <h3>Cappuccino</h3>
+        <p>A combination of equal parts espresso, steamed milk and milk froth. This luxurious drink, if made properly, can double as a dessert with its complex flavors and richness.</p>
+      </div>
+      <div class="col-lg-4 col-sm-12 text-center"><img class="img-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/americano.jpg" data-holder-rendered="true">
+        <h3>Americano</h3>
+        <p>A single shot of espresso added to a cup of hot water. </p>
+      </div>
+      <div class="col-lg-4 col-sm-12 text-center"><img class="img-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/white tea.jpg" data-holder-rendered="true">
+        <h3>White Tea</h3>
+        <p>White teas are picked when young tea buds are tightly enclosed in new leaves. </p>
+      </div>
+      <div class="col-lg-4 col-sm-12 text-center"><img class="img-circle" alt="140x140" style="width: 140px; height: 140px;" src="images/black tea.jpg" data-holder-rendered="true">
+        <h3>Black Tea</h3>
+        <p>Black teas are fully oxidized teas. Black teas brew a liquor from reddish brown to dark brown. </p>
+      </div>
+      <div>&nbsp;</div>
+</div>
+</div>
+<!-- /container -->  <!-- / CONTAINER--> 
+</section>
+<div>&nbsp;</div>
+<div class="well"> </div>
+
+<!-- FOOTER -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-offset-3 col-xs-12 col-lg-6">
+      <div class="jumbotron" id="signup">
+        <div class="row text-center">
+          <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Sign Up</h2>
+          </div>
+          <div class="text-center col-lg-12"> 
+            <!-- CONTACT FORM https://github.com/jonmbake/bootstrap3-contact-form -->
+            <form action="CustomerSignUp.php" method="post" role="form" id="feedbackForm" class="text-center">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                <span class="help-block" style="display: none;">Please enter your name.</span></div>
+              <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
+                </div>
+               <div class="form-group">
+                <label for="name">Birthday</label>
+                <input type="date" class="form-control" id="birthday" name="birthday" style="color: #999999">
+                </div>
+               <div class="form-group">
+                <label for="name">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+               <div class="form-group">
+                <label for="name">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+                </div>
+              <button type="submit" id="feedbackSubmit" class="btn btn-primary btn-lg" style=" margin-top: 10px;">Submit</button>
+            </form>
+            <!-- END CONTACT FORM --> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © MyWebsite. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- / FOOTER --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+<script src="js/bootstrap.js"></script>
+</body>
 </html>

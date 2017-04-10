@@ -34,11 +34,17 @@
                     </ul>
 <ul class="nav navbar-nav navbar-right">
           <li> </li>
-                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">Modify <span class="caret"></span></a>
+                        <?php
+        if ($_SESSION['manager'] == NULL) {
+            echo
+				'<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">Modify <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="modifypage.php">Recipe/Equiptment/Inventory</a> </li>
                             </ul>
-                        </li>
+                        </li>';
+        }
+        ?>
+                        
                     </ul>
                 </div>
                 <!-- /.navbar-collapse --> 
@@ -201,7 +207,7 @@ if ($result->num_rows > 0) {
         echo "<div class='col-xs-6 col-lg-4'>
                         <h3>$row[InvenName]</h3>
                         <p> <i class='icon-desktop '></i>$row[Company]<br> Imported From: $row[ImportLocation]<br> Amount: $row[Amount]<br> Date of Manufacture: $row[DateOfManufacture]</p>";
-        if($row[Amount] <= 5){
+        if($row[Amount] <= 5 && $_SESSION['manager'] == NULL){
                 echo    "<p><a class='btn btn-default' href='http://www.bootstraptor.com'>Order More! »</a></p>";
         }
         echo "</div>";

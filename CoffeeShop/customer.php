@@ -33,16 +33,16 @@
 
 <!-- HEADER -->
 <header>
-  <div class="jumbotron" id="bannerc">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <?php session_start() ?>
-          <h1 class="text-center" id="title1">Hi <?php echo $_SESSION[custName]; ?>! </h1>
-</div>
-      </div>
-    </div>
-  </div>
+            <div class="jumbotron" id="bannerc">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                              <?php session_start() ?>
+         					 <h1 class="text-center" id="title1">Hi <?php echo $_SESSION[custName]; ?>! </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </header>
 <!-- / HEADER --> 
 

@@ -296,7 +296,6 @@ if ($result->num_rows > 0) {
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <p>Copyright © MyWebsite. All rights reserved.</p>
             </div>
         </div>
     </div>

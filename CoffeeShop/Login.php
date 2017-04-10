@@ -80,7 +80,6 @@
                 $redirect = true;
                 $_SESSION['custEmail'] = $row[Email];
                 $_SESSION['custName'] = $row[Name];
-                $_SESSION['points'] = $row[Points_Balance];
             }
             else{
                 echo "Wrong password!";

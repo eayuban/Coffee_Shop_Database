@@ -18,6 +18,8 @@
             
             addCustomer($conn);
             closeDatabaseConn($conn);
+            echo "<script type='text/javascript'> window.location.replace('homePage.html'); </script>";
+
             
         function addCustomer($conn){
             echo "Adding $_POST[name] to the database!<br>";
@@ -77,7 +79,6 @@
         
         function closeDatabaseConn($dbConn){
             $dbConn -> close();
-            die("Disconnected from Database.");
         }
             
         ?>

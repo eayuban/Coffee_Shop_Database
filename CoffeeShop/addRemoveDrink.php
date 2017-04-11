@@ -44,9 +44,9 @@
                 $price = $_POST[price];
                 
                 $sql = "INSERT
-                        INTO drink (Name, Recipe, Type, Price)
+                        INTO drink (Name, Recipe, Type, Price, Location)
                         VALUES
-                        ('$drinkName', '$recipe', '$type', '$price')";
+                        ('$drinkName', '$recipe', '$type', '$price', '$_SESSION[empLocation]')";
             
                 if($conn->query($sql) == TRUE){
                     echo "Added $drinkName successfully!<br>";
@@ -67,7 +67,8 @@
                         *
                         FROM drink
                         WHERE
-                        Name = '$drinkName'";
+                        Name = '$drinkName' AND
+                        Location = '$_SESSION[empLocation]'";
                 $result = $conn->query($sql);
            
                 if ($result->num_rows > 0){
@@ -93,7 +94,8 @@
                     $sql = "UPDATE drink
                             SET Recipe='$recipe',Type='$type',Price='$price'
                             WHERE 
-                            Name = '$drinkName'";  
+                            Name = '$drinkName' AND
+                            Location = '$_SESSION[empLocation]'";  
                     if($conn->query($sql) == TRUE){
                     echo "Updated $drinkName successfully!<br>";
                 }
@@ -116,7 +118,8 @@
                 $sql = "DELETE
                         FROM drink
                         WHERE
-                        Name = '$drinkName'";
+                        Name = '$drinkName'
+                        AND Location = '$_SESSION[empLocation]'";
             
                 if($conn->query($sql) == TRUE){
                     echo "Removed $drinkName successfully!<br>";

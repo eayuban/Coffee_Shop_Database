@@ -8,6 +8,7 @@
     <body>
         <h1>You are here because you REMOVED an EMPLOYEE from the Database</h1>
         <?php
+        session_start();
             // Access the database!
             $servername = "localhost";
             $username = "root";
@@ -46,7 +47,8 @@
             
             $sql = "DELETE
                     FROM employee
-                    WHERE SIN='$sin'";
+                    WHERE SIN='$sin' AND
+                    Location = '$_SESSION[empLocation]'";
             
             if($conn->query($sql) === TRUE){
                 echo "Removed employee with SIN: $_POST[sin] successfully!<br><br>";

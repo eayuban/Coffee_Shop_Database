@@ -85,7 +85,9 @@
                     $sql = "SELECT
                 *
                 FROM
-                drink";
+                drink
+                WHERE
+                Location = '$_SESSION[empLocation]'";    
 
                     $result = $conn->query($sql);
 

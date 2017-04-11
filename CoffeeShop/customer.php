@@ -44,16 +44,17 @@
 
 <!-- HEADER -->
 <header>
-  <div class="jumbotron" id="bannerc">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1 class="text-center" id="title1">Hi <?php echo $_SESSION[custName]; ?>! </h1>
-</div>
+
+</header>
+<div class="jumbotron" id="bannerc">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+       <h1 class="text-center" id="title1">Hi <?php echo $_SESSION[custName]; ?>! </h1>
       </div>
     </div>
   </div>
-</header>
+</div>
 <!-- / HEADER --> 
 
 <!--  SECTION-1 -->

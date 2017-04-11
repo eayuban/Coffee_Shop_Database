@@ -29,9 +29,9 @@
             $end = $_POST[endTime];
 
             $sql = "INSERT INTO 
-                    time_availability (ESIN, Date, Start, Finish)
+                    time_availability (ESIN, Date, Start, Finish, Location)
                     VALUES
-                    ('$sin', '$date', '$start', '$end')";
+                    ('$sin', '$date', '$start', '$end', '$_SESSION[empLocation]')";
 
             if ($conn->query($sql) == TRUE) {
                 echo "Added time availability successfully!<br>";

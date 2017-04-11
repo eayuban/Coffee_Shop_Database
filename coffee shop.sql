@@ -1,22 +1,7 @@
 ﻿# Host: localhost  (Version 5.7.17-log)
-# Date: 2017-04-10 15:57:25
+# Date: 2017-04-11 13:33:02
 # Generator: MySQL-Front 6.0  (Build 1.62)
 
-
-#
-# Structure for table "condiments"
-#
-
-DROP TABLE IF EXISTS `condiments`;
-CREATE TABLE `condiments` (
-  `InvenName` varchar(255) NOT NULL DEFAULT 'No Name',
-  `Company` varchar(255) NOT NULL DEFAULT 'No Company',
-  `Amount` int(2) unsigned NOT NULL DEFAULT '0',
-  `Best Before` date NOT NULL DEFAULT '0000-00-00',
-  `Location` varchar(255) NOT NULL DEFAULT 'NO LOCATION',
-  PRIMARY KEY (`InvenName`,`Company`,`Location`),
-  KEY `Location` (`Location`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
 # Structure for table "customer"
@@ -33,15 +18,13 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
-# Structure for table "drink"
+# Structure for table "locations"
 #
 
-DROP TABLE IF EXISTS `drink`;
-CREATE TABLE `drink` (
-  `Name` varchar(255) NOT NULL DEFAULT 'Bad Beverage',
-  `Recipe` varchar(5000) DEFAULT NULL,
-  `Type` varchar(255) DEFAULT NULL,
-  `Price` decimal(4,2) unsigned NOT NULL DEFAULT '0.00',
+DROP TABLE IF EXISTS `locations`;
+CREATE TABLE `locations` (
+  `Name` varchar(255) NOT NULL DEFAULT 'Crowfoot',
+  `Address` varchar(255) NOT NULL DEFAULT 'No Address',
   PRIMARY KEY (`Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -57,19 +40,42 @@ CREATE TABLE `employee` (
   `Password` varchar(255) NOT NULL DEFAULT '0000',
   `Location` varchar(255) NOT NULL DEFAULT 'NO LOCATION',
   PRIMARY KEY (`SIN`),
-  KEY `Manager_Ref` (`ManagerSIN`),
-  KEY `Location_Ref` (`Location`)
+  KEY `Man_Ref` (`ManagerSIN`),
+  KEY `Location_Ref` (`Location`),
+  CONSTRAINT `Location_Ref` FOREIGN KEY (`Location`) REFERENCES `locations` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `Man_Ref` FOREIGN KEY (`ManagerSIN`) REFERENCES `employee` (`SIN`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
-# Structure for table "locations"
+# Structure for table "drink"
 #
 
-DROP TABLE IF EXISTS `locations`;
-CREATE TABLE `locations` (
-  `Name` varchar(255) NOT NULL DEFAULT 'Crowfoot',
-  `Address` varchar(255) NOT NULL DEFAULT 'No Address',
-  PRIMARY KEY (`Name`)
+DROP TABLE IF EXISTS `drink`;
+CREATE TABLE `drink` (
+  `Name` varchar(255) NOT NULL DEFAULT 'Bad Beverage',
+  `Recipe` varchar(5000) DEFAULT NULL,
+  `Type` varchar(255) DEFAULT NULL,
+  `Price` decimal(4,2) unsigned NOT NULL DEFAULT '0.00',
+  `Location` varchar(255) NOT NULL DEFAULT 'NO LOCATION',
+  PRIMARY KEY (`Name`),
+  KEY `Location` (`Location`),
+  CONSTRAINT `drink_ibfk_1` FOREIGN KEY (`Location`) REFERENCES `locations` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# Structure for table "condiments"
+#
+
+DROP TABLE IF EXISTS `condiments`;
+CREATE TABLE `condiments` (
+  `InvenName` varchar(255) NOT NULL DEFAULT 'No Name',
+  `Company` varchar(255) NOT NULL DEFAULT 'No Company',
+  `Amount` int(2) unsigned NOT NULL DEFAULT '0',
+  `Best Before` date NOT NULL DEFAULT '0000-00-00',
+  `Location` varchar(255) NOT NULL DEFAULT 'NO LOCATION',
+  PRIMARY KEY (`InvenName`,`Company`,`Location`),
+  KEY `Loc_Ref` (`Location`),
+  CONSTRAINT `Loc_Ref` FOREIGN KEY (`Location`) REFERENCES `locations` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
@@ -83,21 +89,9 @@ CREATE TABLE `machinery` (
   `Location` varchar(255) NOT NULL DEFAULT 'NO LOCATION',
   `Name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Type`,`ManufactureYear`,`Location`),
-  KEY `Loc_Ref` (`Location`)
+  KEY `Location_Reference` (`Location`),
+  CONSTRAINT `Location_Reference` FOREIGN KEY (`Location`) REFERENCES `locations` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-#
-# Structure for table "redeemed_rewards"
-#
-
-DROP TABLE IF EXISTS `redeemed_rewards`;
-CREATE TABLE `redeemed_rewards` (
-  `RewardType` varchar(255) NOT NULL DEFAULT 'Unspecified Reward',
-  `CustomerEmail` varchar(255) NOT NULL DEFAULT 'noemail@available.com',
-  `RewardID` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`RewardID`),
-  KEY `Customer_Ref` (`CustomerEmail`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 #
 # Structure for table "rewards"
@@ -111,6 +105,22 @@ CREATE TABLE `rewards` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
+# Structure for table "redeemed_rewards"
+#
+
+DROP TABLE IF EXISTS `redeemed_rewards`;
+CREATE TABLE `redeemed_rewards` (
+  `RewardType` varchar(255) NOT NULL DEFAULT 'Unspecified Reward',
+  `CustomerEmail` varchar(255) NOT NULL DEFAULT 'noemail@available.com',
+  `RewardID` int(11) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`RewardID`),
+  KEY `reward_type` (`RewardType`),
+  KEY `Customer_e` (`CustomerEmail`),
+  CONSTRAINT `Customer_e` FOREIGN KEY (`CustomerEmail`) REFERENCES `customer` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `reward_type` FOREIGN KEY (`RewardType`) REFERENCES `rewards` (`Type`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+#
 # Structure for table "sales"
 #
 
@@ -122,8 +132,10 @@ CREATE TABLE `sales` (
   `CustomerInfo` varchar(255) DEFAULT NULL,
   `Location` varchar(255) NOT NULL DEFAULT 'NO LOCATION',
   PRIMARY KEY (`Sales ID`),
-  KEY `Customer_Reference` (`CustomerInfo`),
-  KEY `Locat_Ref` (`Location`)
+  KEY `C_ref` (`CustomerInfo`),
+  KEY `Loc_Reference` (`Location`),
+  CONSTRAINT `C_ref` FOREIGN KEY (`CustomerInfo`) REFERENCES `customer` (`Email`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `Loc_Reference` FOREIGN KEY (`Location`) REFERENCES `locations` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 #
@@ -139,7 +151,8 @@ CREATE TABLE `tea_leaves_coffee_beans` (
   `ImportLocation` varchar(255) DEFAULT NULL,
   `DateOfManufacture` date DEFAULT NULL,
   PRIMARY KEY (`InvenName`,`Company`,`InvenLocation`),
-  KEY `Location_Reference` (`InvenLocation`)
+  KEY `Loc_Refer` (`InvenLocation`),
+  CONSTRAINT `Loc_Refer` FOREIGN KEY (`InvenLocation`) REFERENCES `locations` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
@@ -152,5 +165,9 @@ CREATE TABLE `time_availability` (
   `Date` date NOT NULL DEFAULT '0000-00-00',
   `Start` time NOT NULL DEFAULT '00:00:00',
   `Finish` time NOT NULL DEFAULT '00:00:00',
-  PRIMARY KEY (`ESIN`,`Date`)
+  `Location` varchar(255) NOT NULL DEFAULT 'NO LOCATION',
+  PRIMARY KEY (`ESIN`,`Date`),
+  KEY `Location_Refer` (`Location`),
+  CONSTRAINT `Location_Refer` FOREIGN KEY (`Location`) REFERENCES `locations` (`Name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `emp_Reference` FOREIGN KEY (`ESIN`) REFERENCES `employee` (`SIN`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

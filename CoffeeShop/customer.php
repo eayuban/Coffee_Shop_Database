@@ -33,9 +33,9 @@
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="homePage.html">Log Out</a> </li>
-      </ul>
+      <form action="homePage.html" method="post" class="navbar-form navbar-right" role="search">
+        <button type="submit" class="btn btn-default">Log Out</button>
+      </form>
     </div>
     <!-- /.navbar-collapse --> 
   </div>
